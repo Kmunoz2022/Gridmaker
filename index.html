@@ -18,7 +18,9 @@
         <option value="Blue">Blue</option>
         <option value="Green">Green</option>
         <option value="Yellow">Yellow</option>
+         <option value="custom">Enter your own hex color</option>
     </select>
+    <input type="text" id="customColorInput" placeholder="#FFFFFF" oninput="updateCustomColor()" style="display: none;">
     <table id="grid">
     </table>
     <script src="script.js"></script>
