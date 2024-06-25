@@ -114,3 +114,21 @@ function fill() {
         cells[i].style.backgroundColor = colorSelected;
     }
 }
+
+function clearAll(){
+    let cells = document.getElementsByTagName("td");
+
+    for (let i = 0; i < cells.length; i++){
+        cells[i].style.backgroundColor = "";
+    }
+}
+
+function fillU(){
+    let cells = document.getElementsByTagName("td");
+
+    for (let i = 0; i < cells.length; i++){
+        if (cells[i].style.backgroundColor === "") {
+            cells[i].style.backgroundColor = colorSelected;
+        }
+    }
+}
