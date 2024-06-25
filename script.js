@@ -89,3 +89,28 @@ function removeC() {
     }
 
 }
+
+function selected() {
+    const colorSelect = document.getElementById('selectedID');
+    const customColorInput = document.getElementById('customColorInput');
+    
+    if (colorSelect.value === 'custom') {
+        customColorInput.style.display = 'inline-block';
+        colorSelected = customColorInput.value || '#FFFFFF';
+    } else {
+        customColorInput.style.display = 'none';
+        colorSelected = colorSelect.value;
+    }
+}
+
+function updateCustomColor() {
+    const customColorInput = document.getElementById('customColorInput');
+    colorSelected = customColorInput.value;
+}
+
+function fill() {
+    let cells = document.getElementsByTagName("td");
+    for (let i = 0; i < cells.length; i++){
+        cells[i].style.backgroundColor = colorSelected;
+    }
+}
