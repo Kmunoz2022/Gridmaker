@@ -30,6 +30,7 @@ function addR() {
         grid.appendChild(row);
     }
 }
+
 //Adds a column
 function addC() {
     let grid = document.getElementById("grid");
@@ -53,4 +54,38 @@ function addC() {
             rows[i].appendChild(col);
         }
     } 
+}
+
+function removeR() {
+    let grid = document.getElementById("grid");
+    let rows = document.getElementsByTagName("tr");
+    if(rows.length === 0){
+        alert("There is nothing to delete");
+        return;
+    }
+
+    let lastRow = grid.lastElementChild;
+    grid.removeChild(lastRow);
+    
+}
+//Remove a column
+function removeC() {
+    let rows = document.getElementsByTagName("tr");
+    let grid = document.getElementById("grid");
+
+    if(rows.length === 0){
+        alert("There is nothing to delete");
+        return;
+    }
+
+    if(rows[0].childElementCount === 1) {
+        grid.innerHTML = "";
+        return;
+    } 
+
+    for (let i = 0; i < rows.length; i++){
+        let col = rows[i].lastElementChild; 
+        rows[i].removeChild(col);
+    }
+
 }
